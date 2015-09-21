@@ -2,6 +2,7 @@
 $(document).ready(function() {
 
     Backbone.history.start();
+
     $('#menuScreen').hide();
     var showMenuScreen = function() {
         $('#loadingScreen').hide();
@@ -16,20 +17,21 @@ $(document).ready(function() {
             'game': 'gameScreen'
         },
         settingsScreen: function() {
-            $('section').hide();
-            $('#settingsScreen').show();
+        	$('#settingsScreen').show();
+            $('#leaderBoardScreen').hide();
+            $('#gameScreen').hide();
         },
         leaderBoardScreen: function() {
-            $('section').hide();
+            $('#settingsScreen').hide();
             $('#leaderBoardScreen').show();
+            $('#gameScreen').hide();
         },
         gameScreen: function() {
-            $('section').hide();
+            $('#settingsScreen').hide();
+            $('#leaderBoardScreen').hide();
             $('#gameScreen').show();
         }
 
     });
-
-    var game = new Router();
-
+    var game = new Router;
 });
