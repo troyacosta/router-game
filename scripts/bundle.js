@@ -7,27 +7,40 @@ $(document).ready(function () {
     $('#menuScreen').hide();
     var showMenuScreen = function showMenuScreen() {
         $('#loadingScreen').hide();
-        $('#menuScreen').show();
+        $('#menuScreen').hide();
+        $('#settingsScreen').show();
+        $('#leaderBoardScreen').show();
+        $('#gameScreen').show();
     };
     setTimeout(showMenuScreen, 4000);
 
     var Router = Backbone.Router.extend({
         routes: {
+            'menu': 'menuScreen',
             'settings': 'settingsScreen',
             'leaderBoard': 'leaderBoardScreen',
             'game': 'gameScreen'
         },
+        menuScreen: function menuScreen() {
+            $('#menuScreen').hide();
+            $('#settingsScreen').show();
+            $('#leaderBoardScreen').show();
+            $('#gameScreen').show();
+        },
         settingsScreen: function settingsScreen() {
+            $('#menuScreen').show();
             $('#settingsScreen').show();
             $('#leaderBoardScreen').hide();
             $('#gameScreen').hide();
         },
         leaderBoardScreen: function leaderBoardScreen() {
+            $('#menuScreen').show();
             $('#settingsScreen').hide();
             $('#leaderBoardScreen').show();
             $('#gameScreen').hide();
         },
         gameScreen: function gameScreen() {
+            $('#menuScreen').show();
             $('#settingsScreen').hide();
             $('#leaderBoardScreen').hide();
             $('#gameScreen').show();

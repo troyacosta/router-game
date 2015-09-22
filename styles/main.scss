@@ -10,12 +10,20 @@
 	font-size: 5em;
 	border: none;
 }
-#menuScreen {
-	text-align: center;
+#settingsScreen {
+	float: left;
+}
+#leaderBoardScreen {
+	float: right;
+}
+#gameScreen {
+	width: 10em;
+	margin: 0 auto;
 }
 a {
 	color: black;
 	border: 1px solid black;
 	font-size: 3em;
 	text-decoration: none;
+	padding: .05em;
 }
